@@ -1,12 +1,12 @@
-import Link from 'next/link'
+import SearchBar from "./SearchBar";
 
-export default function Navbar(){
+export default function Navbar() {
   return (
-    <nav className="w-full border-b">
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        <Link href="/" className="font-bold text-xl">KotakNet</Link>
-        <Link href="/search" className="text-slate-600 hover:text-slate-900">Browse</Link>
+    <div className="w-full p-4 bg-neutral-950 border-b border-neutral-800 flex items-center justify-between">
+      <h1 className="text-white text-xl font-bold">KotakNet</h1>
+      <div className="w-1/2">
+        <SearchBar />
       </div>
-    </nav>
-  )
+    </div>
+  );
 }

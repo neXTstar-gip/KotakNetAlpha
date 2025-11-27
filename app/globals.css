@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base body handled in layout.tsx gradient, but set defaults */
+:root {
+  --glass-bg: rgba(255,255,255,0.06);
+  --glass-border: rgba(255,255,255,0.08);
+  --glass-accent: rgba(59,130,246,0.12);
+}
+
+/* Utility helper for glass panel */
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(8px);
+}
+
+/* small animation for fade-in */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeInUp {
+  animation: fadeInUp 240ms cubic-bezier(.2,.9,.2,1) both;
+}
+
+/* result hover glow */
+.result-hover {
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.result-hover:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(59,130,246,0.12);
+}
+
+/* scrollbar for results */
+.results-scroll::-webkit-scrollbar { width: 8px; height: 8px; }
+.results-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.06); border-radius: 8px; }
+
+/* small utility */
+.clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
